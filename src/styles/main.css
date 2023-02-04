@@ -1,0 +1,402 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff8f6;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  color: #424242;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #FFB26B;
+  color: white;
+  z-index: 100;
+  font-size: 13.5px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+  font-family: 'Righteous', cursive;
+}
+
+.skip-link:focus {
+  top: 0;
+  text-decoration: underline;
+}
+
+/*
+ * Header
+ */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: #FF7B54;
+  color: #FFD56F;
+  font-weight: bold;
+}
+
+header p {
+  font-family: 'Righteous', cursive;
+  font-size: 25px;
+}
+
+#menu {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  display: block;
+  width: 30px;
+  -webkit-transform: translate(-300px, -500px);
+  transform: translate(-300px, -500px);
+}
+
+/*
+ * NavBar
+ */
+
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: right;
+  line-height: 24px;
+}
+
+.nav a {
+  font-size: 13.5px;
+  display: inline-block;
+  padding: 1.3em;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #FFD56F;
+}
+
+/*
+ * Main
+ */
+
+main {
+  flex: 1;
+}
+
+
+/*
+ * Jumbotron
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-color: #FF7B54;
+  background-blend-mode: multiply;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+  margin: 30px;
+  text-align: center;
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 25px;
+  font-family: 'Righteous', cursive;
+}
+
+.hero__tagline {
+  color: #eee;
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+/*
+ * Posts
+ */
+
+.posts {
+  display: grid;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.posts__title {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 25px;
+  margin: 30px;
+  font-weight: 500;
+}
+
+/*
+ * Post item
+ */
+
+.post-item {
+  background-color: rgba(255, 213, 111, .1);;
+  box-shadow: 0 4px 20px 0 rgba(255, 213, 111, .5);
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post-item:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 213, 111, .2);
+}
+
+.post-item__content {
+  padding: 16px;
+}
+
+.post-item__thumbnail {
+  width: 100%;
+}
+
+.post-item__rating, .post-item__city {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #FFB26B;
+}
+
+.post-item__title {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s opacity;
+  color: #FF7B54;
+}
+
+.post-item__title:hover {
+  opacity: 0.8;
+}
+
+.post-item__title a {
+  padding: 15px 15px 15px 0;
+  text-decoration: none;
+  color: inherit;
+  height: 44px;
+}
+
+.post-item__description {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+/*
+ * Footer
+ */
+
+footer {
+  background-color: #FFD56F;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  margin: 1.5em 0 0 0;
+}
+
+/*
+ * Detail
+ */
+
+#restaurant__detail {
+  margin: 30px auto auto auto;
+  display: grid;
+  grid-gap: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+#restaurant__image {
+  width: 100%;
+  background-color: rgba(255, 213, 111, .4);
+  box-shadow: 0 4px 20px 0 rgb(255, 238, 198);
+  border-radius: 10px;
+}
+
+#restaurant__info {
+  background-color: rgba(255, 213, 111, .4);
+  box-shadow: 0 4px 20px 0 rgb(255, 238, 198);
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#reviews {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.review__item, #add__review {
+  background-color: rgba(255, 213, 111, .1);
+  box-shadow: 0 4px 20px 0 rgba(255, 213, 111, .5);
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#restaurant__title, #restaurant__reviews h2, #add__review__name {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s opacity;
+  color: #FF7B54;
+  font-family: 'Righteous', cursive;
+}
+
+#restaurant__reviews h2, #add__review__name {
+  margin: 10px 0 12px 0;
+}
+
+#restaurant__info h3, label {
+  font-size: 13px;
+  margin: 10px 0 4px 0;
+  color: #FFB26B;
+  font-weight: bold;
+}
+
+#restaurant__info ul {
+  padding-left: 20px;
+}
+
+.review__name {
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  color: #fca555;
+}
+
+.review__date {
+  font-size: 10px;
+  margin: 0 0 8px 0;
+  color: #ffba7a;
+}
+
+#restaurant__categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  background-color: rgba(255, 213, 111, 1);
+  box-shadow: 0 4px 20px 0 rgba(255, 213, 111, .5);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 8px 15px;
+  margin: 10px 10px 4px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#add__review form {
+  display: grid;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 122, 82, .3);
+  border-radius: 4px;
+  background-color: #fff8f6;
+  font-family: 'Lato', sans-serif;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+}
+
+input[type=text]:focus, textarea:focus {
+  border: 2px solid rgba(255, 122, 82, 1);
+  background-color: white;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: rgba(255, 122, 82, 1);
+  cursor: pointer;
+  color: white;
+  transition: .15s ease-in-out;
+}
+
+input[type=submit]:hover, input[type=submit]:active {
+  background-color: rgb(255, 100, 53);
+}
+
+/*
+ * Like
+ */
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF7B54;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0 rgba(255, 213, 111, .5);
+  transition: .15s ease-in-out;
+}
+
+.like:hover {
+  background-color: rgb(255, 100, 53);
+}
