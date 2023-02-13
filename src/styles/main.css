@@ -123,7 +123,7 @@ main {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-image: url("../public/images/heros/hero-image_2-large.jpg");
   background-color: #FF7B54;
   background-blend-mode: multiply;
 }
@@ -399,4 +399,67 @@ input[type=submit]:hover, input[type=submit]:active {
 
 .like:hover {
   background-color: rgb(255, 100, 53);
+}
+
+.restaurant-item__not__found {
+  text-align: center;
+  font-size: 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+#query {
+  width: 60%;
+  align-self: center;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+/*
+ * Skeleton UI
+ */
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgb(255, 209, 166);
+  }
+  100% {
+    background-color: rgb(255, 223, 213);
+  }
+}
+
+.skeleton-img {
+  height: 220px;
+}
+
+.skeleton-text {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-title {
+  width: 80%;
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.skeleton-text__body {
+  width: 75%;
+}
+
+.skeleton-small {
+  width: 30%;
+  height: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
 }

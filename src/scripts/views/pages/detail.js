@@ -1,7 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
 import { createRestaurantDetailTemplate, createCategoryItemTemplate, createMenuItemTemplate, createReviewItemTemplate } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
+import FavoriteRestaurant from '../../data/favorite-restaurant';
 
 
 const Detail = {
@@ -55,8 +56,9 @@ const Detail = {
             document.querySelector('#review').value = '';
         });
 
-        LikeButtonInitiator.init({
+        LikeButtonPresenter.init({
             likeButtonContainer: document.querySelector('#likeButtonContainer'),
+            favoriteRestaurants: FavoriteRestaurant,
             restaurant: restaurant,
         });
     },

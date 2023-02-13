@@ -1,6 +1,5 @@
 import CONFIG from '../../globals/config';
 
-
 const createRestaurantDetailTemplate = (restaurant) => `
 <img tabindex="0" id="restaurant__image" src="${CONFIG.MEDIUM_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
 <div id="restaurant__info">
@@ -28,9 +27,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h2 id="add__review__name" tabindex="0">Add Review</h2>
     <form id="add__review" onsubmit="return false">
         <label for="Name" tabindex="0">Name</label>
-        <input type="text" id="name" name="name" tabindex="0">
+        <input type="text" id="name" name="Name" tabindex="0">
         <label for="Review" tabindex="0">Review</label>
-        <textarea type="text" id="review" name="review" tabindex="0"></textarea>
+        <textarea type="text" id="review" name="Review" tabindex="0"></textarea>
         <input type="submit" value="Submit" tabindex="0">
     </form>
 </div>
@@ -58,24 +57,24 @@ const createReviewItemTemplate = (review) => `
 
 const createRestaurantItemTemplate = (restaurant) => `
 <article class="post-item" id="${restaurant.id}">
-    <img class="post-item__thumbnail" tabindex="0" src="${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+    <img class="post-item__thumbnail lazyload" tabindex="0" data-src="${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
     <div class="post-item__content">
-        <h3 class="post-item__title"  tabindex="0"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
+        <h3 class="post-item__title"  tabindex="0"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h3>
         <p class="post-item__city"  tabindex="0">${restaurant.city}</p>
         <p class="post-item__rating"  tabindex="0">Rating: ${restaurant.rating}</p>
-        <p class="post-item__description"  tabindex="0">${restaurant.description}</p>
+        <p class="post-item__description"  tabindex="0">${restaurant.description || '-'}</p>
     </div>
 </article>
 `;
 
-const createLikeButtonTemplate = () => `
-<button tabindex="0" aria-label="Masukkan ke favorite" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => `
+<button tabindex="0" aria-label="Like this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
 </button>
 `;
 
-const createLikedButtonTemplate = () => `
-<button tabindex="0" aria-label="Keluarkan dari favorite" id="likeButton" class="like">
+const createLikedRestaurantButtonTemplate = () => `
+<button tabindex="0" aria-label="Unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
 </button>
 `;
@@ -86,6 +85,6 @@ export {
     createCategoryItemTemplate,
     createMenuItemTemplate,
     createReviewItemTemplate,
-    createLikeButtonTemplate,
-    createLikedButtonTemplate,
+    createLikeRestaurantButtonTemplate,
+    createLikedRestaurantButtonTemplate,
 };

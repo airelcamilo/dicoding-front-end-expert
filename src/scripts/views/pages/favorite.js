@@ -1,21 +1,24 @@
 import FavoriteRestaurant from '../../data/favorite-restaurant';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+// import { createRestaurantItemTemplate } from '../templates/template-creator';
+import FavoriteRestaurantSearchView from './liked-restaurants/favorite-restaurant-search-view';
+import FavoriteRestaurantSearchPresenter from './liked-restaurants/favorite-restaurant-search-presenter';
+import FavoriteRestaurantShowPresenter from './liked-restaurants/favorite-restaurant-show-presenter';
+
+const view = new FavoriteRestaurantSearchView();
 
 const Like = {
     async render() {
-        return `
-        <h2 class="posts__title" tabindex="0">Your Favorite Restaurants</h2>
-        <div id="posts" class="posts">
-        </div>
-    `;
+        return view.getTemplate();
     },
 
     async afterRender() {
-        const restaurants = await FavoriteRestaurant.getAllRestaurant();
-        const restaurantsContainer = document.querySelector('#posts');
-        restaurants.forEach((restaurant) => {
-            restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-        });
+        new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurant });
+        new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurant });
+        // const restaurants = await FavoriteRestaurant.getAllRestaurant();
+        // const restaurantsContainer = document.querySelector('#posts');
+        // restaurants.forEach((restaurant) => {
+        //     restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+        // });
     },
 };
 

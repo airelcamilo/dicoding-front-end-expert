@@ -51,6 +51,13 @@
 }
 
 @media screen and (max-width: 600px) {
+    .hero {
+        background-image: url("../public/images/heros/hero-image_2-small.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .posts {
         grid-template-columns: 1fr;
         padding: 0 30px;
